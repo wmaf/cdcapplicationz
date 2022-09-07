@@ -9,7 +9,8 @@ import org.springframework.web.client.RestTemplate;
 public class SpanishToEnglishDictonary {
     @GetMapping("/spanish")
     public Object spanishDefinition(RestTemplate restTemplate ){
-        Object requestSpanishDefinition = restTemplate.getForObject();
+        //add API env
+        Object requestSpanishDefinition = restTemplate.getForObject("https://www.dictionaryapi.com/api/v3/references/spanish/json/language?key=your-api-key", Object.class);
         return requestSpanishDefinition;
     }
 }

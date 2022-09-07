@@ -10,7 +10,7 @@ public class EnglishDictonary {
     @GetMapping("/english")
     public Object englishDefinition(RestTemplate restTemplate){
         //create var for "word"
-        Object requestEnglishDefinition = restTemplate.getForObject("https://api.dictionaryapi.dev/api/v2/entries/en/<word>", Object.class);
+        Object requestEnglishDefinition = restTemplate.getForObject("https://api.dictionaryapi.dev/api/v2/entries/en/test", Object.class);
         return requestEnglishDefinition;
     }
 
